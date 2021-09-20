@@ -8,7 +8,7 @@ Config is based on a command-line interface and/or text config files. Both ways 
 
 ### COMMAND-LINE INTERFACE (CLI)
 
-Run cmd.exe in your Windows OS. Navigate to folder containing the app. If you have ArcGIS 10.0 Python in your system path you can just run the it by writing 'mxd_export.py' along with required parameters. Otherwise you need to precede it with the path to 'pythone.exe' installed with ArcGIS 10.0.
+Run cmd.exe in your Windows OS. Navigate to folder containing the app. If you have ArcGIS 10.0 Python in your system path you can just run it by writing 'mxd_export.py' along with required parameters. Otherwise you need to precede it with the path to 'python.exe' installed with ArcGIS 10.0.
 
 For example:
 
@@ -47,7 +47,7 @@ You can base your configs on a template:
 
 There are three sections of parameters inside the file - `[GENERAL] [FILTERS]` and a special group `[DEFAULT]`.
 
-It is required that you provide `input_folder`, `output_folder`, `output_type` parameters in `[GENERAL]` section. Values of other parameters will be taken from `[DEFAULT]` section if you leave it like that. If you want to overwrite them, you can also add those parameters to `[GENERAL]` with new values. Notice that `filename_pattern` and `keywords` go to `[FILTERS]`.
+It is required that you provide `input_folder`, `output_folder`, `output_type` parameters in `[GENERAL]` section. Values for the rest will be taken from the `[DEFAULT]` section. If you want to overwrite the defaults, you can also add those parameters to `[GENERAL]` with new values. Notice that `filename_pattern` and `keywords` go to `[FILTERS]`.
 
 To temporarily deactivate parameters precede them with `#` sign:
 
@@ -55,7 +55,7 @@ To temporarily deactivate parameters precede them with `#` sign:
 
 ### MIXED CONFIG
 
-If you chose to load your config from a text file, you are still allowed to add more parameters through CLI that will overwrite those inside the file. This way allows you to have template config in file and change some parameters on the fly. Here are some examples:
+If you chose to load your config from a text file, you are still allowed to add more parameters through CLI that will overwrite those inside the config file. This way allows you to have template config in the file and change some parameters on the fly. Here are some examples:
 
     mxd_export.py --config config\template_jpg.conf -o D:\new_jpgs
     mxd_export.py --config config\template_jpg.conf -o D:\selected_jpgs -p N33102*
@@ -73,7 +73,7 @@ List of available image formats:
 
 #### CPU
 
-By  default the application detects the max number of available CPU cores and use 2 less. One will be used if your PC has only one or two cores.
+By  default the application detects the max number of available CPU cores and uses 2 less. One will be used if your PC has only one or two cores.
 
 You can overwrite this with your own values. The application will return an error if you exceed the max number of available CPU cores.
 
